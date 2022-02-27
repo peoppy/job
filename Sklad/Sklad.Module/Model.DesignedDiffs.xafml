@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Sklad">
+  <ActionDesign>
+    <Actions>
+      <Action Id="Save" ImageName="save" PaintStyle="Default" ValidationContexts="Save" />
+    </Actions>
+    <ActionToContainerMapping>
+      <ActionContainer Id="None" Removed="True">
+        <ActionLink ActionId="DialogClose" Removed="True" />
+      </ActionContainer>
+      <ActionContainer Id="PopupActions">
+        <ActionLink ActionId="CancelAction" Removed="True" />
+        <ActionLink ActionId="DialogCancel" Removed="True" />
+      </ActionContainer>
+      <ActionContainer Id="Save">
+        <ActionLink ActionId="Save" Index="1" />
+        <ActionLink ActionId="SaveAndClose" Index="1" />
+        <ActionLink ActionId="SaveAndNew" Index="" />
+      </ActionContainer>
+      <ActionContainer Id="Security">
+        <ActionLink ActionId="MyDetails" Index="" />
+      </ActionContainer>
+      <ActionContainer Id="Tools" Removed="True">
+        <ActionLink ActionId="ExportModelDifferences" Removed="True" />
+        <ActionLink ActionId="ImportSharedModelDifference" Removed="True" />
+        <ActionLink ActionId="ResetModelDifferences" Removed="True" />
+      </ActionContainer>
+      <ActionContainer Id="UndoRedo" Removed="True">
+        <ActionLink ActionId="Cancel" Removed="True" />
+      </ActionContainer>
+      <ActionContainer Id="View">
+        <ActionLink ActionId="ResetViewSettings" Removed="True" />
+      </ActionContainer>
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" DefaultListViewAllowEdit="False">
+      <OwnMembers>
+        <Member Name="ChangePasswordOnFirstLogon" IsPassword="False" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sklad.Module.BusinessObjects.TEST.CargoChangeHistory" DefaultListViewAllowEdit="False" />
+    <Class Name="Sklad.Module.BusinessObjects.TEST.Platform">
+      <OwnMembers>
+        <Member Name="Pickets" DataSourcePropertyIsNullMode="SelectAll" LookupEditorMode="Auto" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sklad.Module.BusinessObjects.TEST.PlatformChangeHistory" DefaultListViewAllowEdit="False" />
+  </BOModel>
+  <CreatableItems>
+    <CreatableItem ClassName="Sklad.Module.BusinessObjects.TEST.Sklad" Index="1" />
+    <CreatableItem ClassName="Sklad.Module.BusinessObjects.TEST.Platform" Index="2" />
+    <CreatableItem ClassName="Sklad.Module.BusinessObjects.TEST.Picket" Index="3" />
+    <CreatableItem ClassName="Sklad.Module.BusinessObjects.TEST.CargoChangeHistory" Shortcut="4" />
+    <CreatableItem ClassName="Sklad.Module.BusinessObjects.TEST.PlatformChangeHistory" Shortcut="5" />
+  </CreatableItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="21.2.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Validation>
+    <Contexts>
+      <ValidationContext Id="Delete" AllowInplaceValidation="True" />
+    </Contexts>
+  </Validation>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <DetailView Id="Picket_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Picket">
+              <LayoutItem Id="ID" Index="" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Platform_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Platform">
+              <LayoutItem Id="ID" Index="" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Sklad_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Sklad">
+              <LayoutItem Id="ID" Index="" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
