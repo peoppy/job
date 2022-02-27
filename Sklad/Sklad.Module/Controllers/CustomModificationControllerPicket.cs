@@ -39,14 +39,19 @@ namespace Sklad.Module.Controllers
         /// <summary> Пикет после сохраняемого (Number + 1) </summary>
         Picket picketAfterSave = null;
 
-
+        /// <summary>
+        /// Конструктор класса
+        /// </summary>
         public CustomModificationControllerPicket()
         {
             InitializeComponent();
             this.TargetObjectType = typeof(Picket); //Тип целевого объекта (Пикеты)
             this.TargetViewType = ViewType.DetailView; //Тип целевого представления (Подробный вид)
         }
-        //Событие при активации контроллера
+
+        /// <summary>
+        /// Событие при активации контроллера
+        /// </summary>
         protected override void OnActivated()
         {
             base.OnActivated();
@@ -77,7 +82,11 @@ namespace Sklad.Module.Controllers
             }
         }
 
-        //Событие при нажатии на кнопку удалить
+        /// <summary>
+        /// Событие сделано для выполнения проверки удаляемого пикета
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteExecuting(object sender, CancelEventArgs e)
         {
             picketDel = ((Picket)View.CurrentObject);
@@ -100,7 +109,11 @@ namespace Sklad.Module.Controllers
             View.ObjectSpace.SetModified(picketDel);
         }
 
-        //Событие при нажатии на одну из кнопок сохранить
+        /// <summary>
+        /// Событие сделано для выполнения проверки сохраняемого пикета
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveExecuting(object sender, CancelEventArgs e)
         {
             picketSave = ((Picket)View.CurrentObject);
@@ -177,6 +190,9 @@ namespace Sklad.Module.Controllers
             }
         }
 
+        /// <summary>
+        /// Событие при деактивации контроллера
+        /// </summary>
         protected override void OnDeactivated()
         {
             //Метод обновления всех объектов

@@ -40,7 +40,9 @@ namespace Sklad.Module.Controllers
         /// <summary> Последняя запись с информацией о площадке до сохранения (Без даты по) </summary>
         PlatformChangeHistory platformChange;
 
-
+        /// <summary>
+        /// Конструктор класса
+        /// </summary>
         public CustomModificationControllerPlatform()
         {
             InitializeComponent();
@@ -48,7 +50,9 @@ namespace Sklad.Module.Controllers
             this.TargetViewType = ViewType.DetailView; //Тип целевого представления (Подробный вид)
         }
 
-        //Событие при активации контроллера
+        /// <summary>
+        /// Метод активации контроллера
+        /// </summary>
         protected override void OnActivated()
         {
             base.OnActivated();
@@ -75,6 +79,12 @@ namespace Sklad.Module.Controllers
             }
         }
         
+        /// <summary>
+        /// Событие сохранения. 
+        /// </summary>
+        /// Событие сделано для того чтобы вести учет изменения груза или состав склада
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveExecuting(object sender, CancelEventArgs e)
         {
             platformSave = (Platform)View.CurrentObject;
@@ -139,7 +149,7 @@ namespace Sklad.Module.Controllers
                     newChangeHistory.namePlatform = platformSave.Name; //Запись названия
                     newChangeHistory.nameSklad = platformSave.IDsklad.Name; //Запись вес груза
                     newChangeHistory.DateSince = DateTime.Now; //Запись даты с
-                                                               //Добавление новой записи в список
+                    //Добавление новой записи в список
                     platformChangeHistories.Add(newChangeHistory);
                     //Сохранение изменений списка
                     View.ObjectSpace.SetModified(platformChangeHistories);
@@ -147,6 +157,9 @@ namespace Sklad.Module.Controllers
             }
         }
 
+        /// <summary>
+        /// Метод деактивации контроллера
+        /// </summary>
         protected override void OnDeactivated()
         {
             //Метод обновления всех объектов
