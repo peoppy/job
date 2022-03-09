@@ -1,2 +1,303 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application />
+<Application AboutInfoString="{0:ProductName}&lt;br&gt;{0:Version}&lt;br&gt;{0:Copyright}&lt;br&gt;{0:Description}">
+  <ActionDesign>
+    <Actions>
+      <Action Id="ChangePasswordByUser" Caption="Изменить пароль" />
+      <Action Id="Diagnostic Info.Actions Info" Caption="Информация о диагностике.Сведения о действиях" />
+      <Action Id="Diagnostic Info.Rules Info" Caption="Диагностические сведения.Сведения о правилах">
+        <ChoiceActionItems>
+          <ChoiceActionItem Id="Rules Info" Caption="Информация о правилах" />
+        </ChoiceActionItems>
+      </Action>
+      <Action Id="Diagnostic Info.View Info" Caption="Диагностическая информация.Просмотр информации" />
+      <Action Id="MyDetails" Caption="Мои данные" />
+      <Action Id="ResetPassword" Caption="Сброс пароля" />
+      <Action Id="ShowAllContexts" Caption="Обосновывать" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.NonPersistentBaseObject" Caption="Непостоянный базовый объект" />
+    <Class Name="DevExpress.ExpressApp.NonPersistentEntityObject" Caption="Непостоянный объект сущности" />
+    <Class Name="DevExpress.ExpressApp.NonPersistentLiteObject" Caption="Непостоянный объект Lite" />
+    <Class Name="DevExpress.ExpressApp.NonPersistentObjectImpl" Caption="Непостоянный объект Impl" />
+    <Class Name="DevExpress.ExpressApp.Security.AuthenticationStandardLogonParameters" Caption="Стандартные параметры входа в систему проверки подлинности">
+      <OwnMembers>
+        <Member Name="Password" Caption="Пароль" />
+        <Member Name="UserName" Caption="Имя пользователя" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ChangePasswordOnLogonParameters" Caption="Изменение пароля для параметров входа в систему">
+      <OwnMembers>
+        <Member Name="ConfirmPassword" Caption="Подтвердите пароль" />
+        <Member Name="NewPassword" Caption="Новый пароль" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ChangePasswordParameters" Caption="Изменение параметров пароля">
+      <OwnMembers>
+        <Member Name="OldPassword" Caption="Старый пароль" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ProceedMember" Caption="Продолжить Участник">
+      <OwnMembers>
+        <Member Name="Caption" Caption="Заголовок" />
+        <Member Name="Name" Caption="Имя" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ResetPasswordParameters" Caption="Сброс параметров пароля">
+      <OwnMembers>
+        <Member Name="Password" Caption="Пароль" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.SecurityDiagnosticInfoObject" Caption="Сведения для диагностики безопасности">
+      <OwnMembers>
+        <Member Name="Criteria" Caption="Критерии" />
+        <Member Name="DiagnosticLog" Caption="Журнал" />
+        <Member Name="Member" Caption="Член" />
+        <Member Name="MembersDataSource" Caption="Источник данных участников" />
+        <Member Name="Operation" Caption="Операция" />
+        <Member Name="TargetType" Caption="Тип цели" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.SystemModule.AboutInfo">
+      <OwnMembers>
+        <Member Name="AboutInfoString" Caption="О строке информации" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Validation.AllContextsView.ContextValidationResult" Caption="Результат проверки контекста">
+      <OwnMembers>
+        <Member Name="BrokenRules" Caption="Нарушенные правила" />
+        <Member Name="Context" Caption="Контекст" />
+        <Member Name="ContextValidationOutcome" Caption="Государство" />
+        <Member Name="DisplayableValidationResultItems" Caption="Отображаемые элементы результатов проверки" />
+        <Member Name="Id" Caption="Идентификатор" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Validation.AllContextsView.DisplayableValidationResultItem" Caption="Сведения о проверке">
+      <OwnMembers>
+        <Member Name="ContextCaption" Caption="Подпись к контексту" />
+        <Member Name="ContextId" Caption="Контекст" />
+        <Member Name="ErrorMessage" Caption="Сообщение об ошибке" />
+        <Member Name="Outcome" Caption="Государство" />
+        <Member Name="Rule" Caption="Правило" />
+        <Member Name="RuleName" Caption="Имя правила" />
+        <Member Name="RuleProperties" Caption="Свойства правила" />
+        <Member Name="TargetCaption" Caption="Отображаемые элементы результатов проверки" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Validation.AllContextsView.ValidationResults" Caption="Результаты проверки">
+      <OwnMembers>
+        <Member Name="DisplayableValidationResultItems" Caption="Критерии" />
+        <Member Name="HighlightErrors" Caption="Выделите проблемы" />
+        <Member Name="Results" Caption="Правило" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.AuditTrail.BaseAuditedObjectWeakReference" Caption="Слабая ссылка на базовый аудированный объект">
+      <OwnMembers>
+        <Member Name="DisplayName" Caption="Отображаемое имя" />
+        <Member Name="GuidId" Caption="Идентификатор guid" />
+        <Member Name="IntId" Caption="Идентификатор int" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Base.SecuredActionDescriptor" Caption="Дескриптор защищенных действий">
+      <OwnMembers>
+        <Member Name="Caption" Caption="Действие" />
+        <Member Name="Category" Caption="Категория" />
+        <Member Name="Id" Caption="Идентификатор" />
+        <Member Name="Image" Caption="Образ" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.AuditDataItemPersistent" Caption="Событие аудита">
+      <OwnMembers>
+        <Member Name="Description" Caption="Описание" />
+        <Member Name="ModifiedOn" Caption="Изменено на" />
+        <Member Name="NewValue" Caption="Новое значение" />
+        <Member Name="OldValue" Caption="Старое значение" />
+        <Member Name="OperationType" Caption="Тип операции" />
+        <Member Name="PropertyName" Caption="Название недвижимости" />
+        <Member Name="UserName" Caption="Имя пользователя" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.AuditedObjectWeakReference" Caption="Слабая ссылка на аудируемый объект">
+      <OwnMembers>
+        <Member Name="AuditDataItems" Caption="Элементы данных аудита" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.BaseObject" Caption="Базовый объект" />
+    <Class Name="DevExpress.Persistent.BaseImpl.ModelDifference" Caption="Разница в моделях">
+      <OwnMembers>
+        <Member Name="Aspects" Caption="Перспектива" />
+        <Member Name="ContextId" Caption="Контекст" />
+        <Member Name="UserName" Caption="Имя пользователя" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.ModelDifferenceAspect" Caption="Аспект различия моделей">
+      <OwnMembers>
+        <Member Name="DisplayName" Caption="Отображаемое имя" />
+        <Member Name="Name" Caption="Имя" />
+        <Member Name="Owner" Caption="Владелец" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyActionPermissionObject" Caption="Запрещенные действия">
+      <OwnMembers>
+        <Member Name="ActionDescriptor" Caption="Действие" />
+        <Member Name="ActionId" Caption="Идентификатор действия" />
+        <Member Name="Category" Caption="Категория" />
+        <Member Name="Image" Caption="Образ" />
+        <Member Name="ToolTip" Caption="Подсказка" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyMemberPermissionsObject">
+      <OwnMembers>
+        <Member Name="TypePermissionObject" Caption="Тип объекта разрешений" />
+        <Member Name="WriteState" Caption="Писать" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyObjectPermissionsObject">
+      <OwnMembers>
+        <Member Name="TypePermissionObject" Caption="Тип объекта разрешений" />
+        <Member Name="WriteState" Caption="Писать" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRole">
+      <OwnMembers>
+        <Member Name="Users" Caption="Пользователей" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRoleBase">
+      <OwnMembers>
+        <Member Name="TypePermissions" Caption="Тип разрешений" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyTypePermissionObject" Caption="Тип разрешений на операцию">
+      <OwnMembers>
+        <Member Name="WriteState" Caption="Писать" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser">
+      <OwnMembers>
+        <Member Name="ChangePasswordOnFirstLogon" ToolTip="Пользователь должен изменить пароль при следующем входе в систему" />
+        <Member Name="UserName" Caption="Имя пользователя" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Validation.IRuleCriteriaProperties">
+      <OwnMembers>
+        <Member Name="UsedProperties" Caption="Использованные свойства" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Validation.IRuleFromBoolPropertyProperties">
+      <OwnMembers>
+        <Member Name="UsedProperties" Caption="Использованные свойства" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Validation.RuleCriteriaProperties">
+      <OwnMembers>
+        <Member Name="UsedProperties" Caption="Использованные свойства" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Validation.RuleFromBoolPropertyProperties">
+      <OwnMembers>
+        <Member Name="UsedProperties" Caption="Использованные свойства" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Validation.RuleSetValidationResult" Caption="Результаты проверки">
+      <OwnMembers>
+        <Member Name="Results" Caption="Правило" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Persistent.Validation.RuleSetValidationResultItem" Caption="Сведения о проверке">
+      <OwnMembers>
+        <Member Name="ContextId" Caption="Контекст" />
+        <Member Name="Target" Caption="Отображаемые элементы результатов проверки" />
+        <Member Name="ValidationOutcome" Caption="Государство" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.Xpo.XPBaseObject" Caption="Объект XPBase" />
+    <Class Name="DevExpress.Xpo.XPCustomObject" Caption="Объект XPCustom" />
+    <Class Name="DevExpress.Xpo.XPLiteObject" Caption="Объект XPLite" />
+    <Class Name="DevExpress.Xpo.XPObjectType" Caption="Тип объекта XPObject" />
+    <Class Name="DevExpress.Xpo.XPWeakReference" Caption="Справочник xpWeak" />
+    <Class Name="Sklad.Module.BusinessObjects.ApplicationUserLoginInfo">
+      <OwnMembers>
+        <Member Name="User" Caption="Пользователь" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="DevExpress.ExpressApp.Security.ObjectAccess">
+        <LocalizationItem Name="Write" Value="Писать" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.ExpressApp.Security.SecurityRequestOperations">
+        <LocalizationItem Name="Write" Value="Писать" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.Persistent.Validation.ValidationOutcome" Value="Результат валидации">
+        <LocalizationItem Name="Valid" Value="Действительный" />
+        <LocalizationItem Name="Warning" Value="Предупреждение" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.Persistent.Validation.ValidationResultType" Value="Тип результата проверки">
+        <LocalizationItem Name="Warning" Value="Предупреждение" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.Persistent.Validation.ValueComparisonType" Value="Тип сравнения значений" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Exceptions">
+      <LocalizationItem Name="CanNotDeleteObject" Value="Вы не можете удалить '{0}' из-за ограничений безопасности." />
+      <LocalizationItem Name="CanNotSaveObject" Value="Вы не можете сохранить '{0}' из-за ограничений безопасности." />
+      <LocalizationGroup Name="UserVisibleExceptions">
+        <LocalizationGroup Name="Security">
+          <LocalizationItem Name="RetypeTheInformation" Value="Неправильное имя пользователя или пароль." />
+        </LocalizationGroup>
+      </LocalizationGroup>
+    </LocalizationGroup>
+    <LocalizationGroup Name="Messages">
+      <LocalizationItem Name="CurrentUserHasBeenDeleted" Value="Учетная запись пользователя больше не существует. Обратитесь за помощью к администратору." />
+      <LocalizationItem Name="Write" Value="Писать" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Namespaces">
+      <LocalizationItem Name="DevExpress.Persistent.Validation" Value="Ратификация" />
+      <LocalizationItem Name="DevExpress.Xpo" Value="Хпо" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Security">
+      <LocalizationItem Name="ProtectedContentToolTip" Value="У вас нет разрешений на просмотр этого содержимого" />
+    </LocalizationGroup>
+  </Localization>
+  <Validation>
+    <ErrorMessageTemplates>
+      <RuleUniqueValue MessageTemplateMustBeUnique="Существует объект с тем же значением, указанным для &quot;{TargetPropertyName}&quot;. &quot;{TargetPropertyName}&quot; значения должны быть уникальными." />
+    </ErrorMessageTemplates>
+  </Validation>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Пользователей" />
+    <DetailView Id="AuthenticationStandardLogonParameters_DetailView">
+      <Items>
+        <StaticText Id="LogonText" Text="Добро пожаловать! Пожалуйста, введите ваше имя пользователя и пароль ниже." />
+      </Items>
+    </DetailView>
+    <DetailView Id="ChangePasswordParameters_Blazor_DetailView">
+      <Items>
+        <StaticText Id="ChangePasswordText" Text="Чтобы изменить пароль, пожалуйста, введите старый и новый пароли в текстовые поля ниже." />
+      </Items>
+    </DetailView>
+    <DetailView Id="ChangePasswordParameters_DetailView">
+      <Items>
+        <StaticText Id="ChangePasswordText" Text="Чтобы изменить пароль, пожалуйста, введите старый и новый пароли в текстовые поля ниже." />
+      </Items>
+    </DetailView>
+    <DetailView Id="DashboardCreationInfo_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DashboardCreationInfo">
+              <LayoutGroup Id="ViewItems" Caption="Просмотр элементов" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RuleSetValidationResult_ByTarget_Error_DetailView" Caption="Ошибка проверки" />
+    <ListView Id="RuleSetValidationResultItem_ByTarget_ListView">
+      <Columns>
+        <ColumnInfo Id="ErrorMessage" Caption="Идентификатор" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

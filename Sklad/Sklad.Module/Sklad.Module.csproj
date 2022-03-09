@@ -9,6 +9,10 @@
   <ItemGroup>
     <Compile Remove="Controllers\CustomDeleteObjectsViewController.cs" />
     <Compile Remove="Controllers\CustomDeleteObjectsViewController.Designer.cs" />
+    <Compile Remove="Controllers\CustomModificationControllerPicket.cs" />
+    <Compile Remove="Controllers\CustomModificationControllerPicket.Designer.cs" />
+    <Compile Remove="Controllers\CustomModificationControllerPlatform.cs" />
+    <Compile Remove="Controllers\CustomModificationControllerPlatform.Designer.cs" />
     <Compile Remove="Controllers\SavePlatform.cs" />
     <Compile Remove="Controllers\SavePlatform.Designer.cs" />
   </ItemGroup>
